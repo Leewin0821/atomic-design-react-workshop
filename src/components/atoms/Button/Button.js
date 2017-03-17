@@ -1,7 +1,22 @@
 import React from 'react'
+import styles from './Button.css'
 
-function Button() {
-  return <button>button</button>
+const BUTTONS = {
+    'default': {
+        'text' : 'default'
+    },
+    'primary': {
+        'text' : 'Primary',
+        'onClick': () => console.info('Awesome!')
+    },
+    'danger': {
+        'text' : 'Danger',
+        'onClick': () => alert('Danger!')
+    }
+}
+
+function Button({type}) {
+    return <button className={styles[type]} onClick={BUTTONS[type].onClick}>{BUTTONS[type].text}</button>
 }
 
 export default Button
