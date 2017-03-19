@@ -3,7 +3,7 @@ import styles from './Button.css'
 
 const BUTTONS = {
     'default': {
-        'text' : 'default'
+        'text' : 'Default'
     },
     'primary': {
         'text' : 'Primary',
