@@ -16,7 +16,7 @@ const item = {
     }]
 };
 
-storiesOf('ATOM - ChosenItem', module)
+storiesOf('MOLECULES - ChosenItem', module)
     .add('with ChosenItem', () => (
         <ChosenItem label={item.label} options={item.options}/>
     ));
