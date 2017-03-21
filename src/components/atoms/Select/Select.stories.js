@@ -14,6 +14,9 @@ const options = [{
 }];
 
 storiesOf('ATOM - Select', module)
-    .add('with select', () => (
-        <Select options={options}/>
+    .add('with no option select', () => (
+        <Select options={[]}/>
     ))
+    .add('with has options select', () => (
+    <Select options={options}/>
+))

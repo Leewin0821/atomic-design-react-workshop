@@ -6,8 +6,13 @@ class Select extends Component {
         this.state = {
             'value' : {}
         };
-        this.options = props.options;
+        this.options = (this.hasOptions(props)) ?
+            props.options : [{'text':'Please select', 'value': ''}];
         this.handleChange = this.handleChange.bind(this);
+    }
+
+    hasOptions() {
+        return this.props.options && this.props.options.length
     }
     handleChange(event) {
         this.setState({
@@ -21,7 +26,7 @@ class Select extends Component {
             )
         });
         return (
-            <select value={this.state.value} onChange={this.handleChange}>
+            <select disabled={!this.hasOptions()} value={this.state.value} onChange={this.handleChange}>
                 {options}
             </select>
         )
