@@ -4,25 +4,30 @@ class Select extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            'value' : {}
+            'value': {}
         };
         this.options = (this.hasOptions(props)) ?
-            props.options : [{'text':'Please select', 'value': ''}];
+            props.options : [{'text': 'Please select', 'value': ''}];
         this.handleChange = this.handleChange.bind(this);
     }
 
     hasOptions() {
         return this.props.options && this.props.options.length
     }
+
     handleChange(event) {
         this.setState({
-            'value' : event.target.value
-        })
+            'value': event.target.value
+        });
+        if (this.props.pickOption) {
+            this.props.pickOption(event.target.value);
+        }
     }
+
     render() {
-        const options = this.options.map((option)=>{
+        const options = this.options.map((option) => {
             return (
-                <option value={option.value}>{option.text}</option>
+                <option value={option}>{option}</option>
             )
         });
         return (

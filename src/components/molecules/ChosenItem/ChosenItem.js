@@ -10,7 +10,7 @@ class ChosenItem extends Component {
         return (
             <div>
                 <label>{this.props.label}</label>
-                <Select options={this.props.options}/>
+                <Select pickOption={this.props.pickOption} options={this.props.options}/>
             </div>
         )
     }
